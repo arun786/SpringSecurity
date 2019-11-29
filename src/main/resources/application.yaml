@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    cache: true
+
+---
+spring:
+  profiles: in-memory
+  userName: arun
+  password: arun
+  h2:
+    console:
+      enabled: false
+
+---
+spring:
+  profiles: h2
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+---
+spring:
+  profiles: mysql
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
